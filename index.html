@@ -1,0 +1,957 @@
+<!DOCTYPE html>
+<html class="h-full light" lang="es">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Boutique Verano Sol María del Pilar | Joyería Artesanal del Mediterráneo</title>
+  
+  <!-- Google Fonts: Plus Jakarta Sans & Material Symbols Outlined -->
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""/>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&family=Playfair+Display:ital,wght@1,500;1,600&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+
+  <!-- Tailwind CSS with Mediterranean Sun Atelier Theme Tokens -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#8d4b00",
+            "primary-container": "#b15f00",
+            "primary-fixed": "#ffdcc3",
+            "primary-fixed-dim": "#ffb77d",
+            "on-primary": "#ffffff",
+            "on-primary-container": "#fffbff",
+            "on-primary-fixed": "#2f1500",
+            "on-primary-fixed-variant": "#6e3900",
+            
+            "secondary": "#006780",
+            "secondary-container": "#76dcff",
+            "secondary-fixed": "#b7eaff",
+            "secondary-fixed-dim": "#6cd3f7",
+            "on-secondary": "#ffffff",
+            "on-secondary-container": "#006077",
+            "on-secondary-fixed": "#001f28",
+            "on-secondary-fixed-variant": "#004e61",
+
+            "tertiary": "#a33900",
+            "tertiary-container": "#cc4900",
+            "tertiary-fixed": "#ffdbce",
+            "tertiary-fixed-dim": "#ffb599",
+            "on-tertiary": "#ffffff",
+            "on-tertiary-container": "#fffbff",
+            "on-tertiary-fixed": "#370e00",
+            "on-tertiary-fixed-variant": "#7f2b00",
+
+            "background": "#fff8f5",
+            "surface": "#fff8f5",
+            "surface-dim": "#e2d8d2",
+            "surface-bright": "#fff8f5",
+            "surface-container-lowest": "#ffffff",
+            "surface-container-low": "#fcf2eb",
+            "surface-container": "#f6ece6",
+            "surface-container-high": "#f0e6e0",
+            "surface-container-highest": "#eae1da",
+            "surface-variant": "#eae1da",
+            
+            "on-surface": "#1f1b17",
+            "on-surface-variant": "#554336",
+            "on-background": "#1f1b17",
+            "outline": "#887364",
+            "outline-variant": "#dbc2b0"
+          },
+          borderRadius: {
+            "DEFAULT": "1rem",
+            "lg": "2rem",
+            "xl": "3rem",
+            "full": "9999px"
+          },
+          fontFamily: {
+            sans: ["Plus Jakarta Sans", "sans-serif"],
+            serif: ["Playfair Display", "serif"]
+          }
+        }
+      }
+    };
+  </script>
+
+  <style>
+    .hide-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .hide-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+    .line-clamp-1 {
+      display: -webkit-box;
+      -webkit-line-clamp: 1;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    .line-clamp-2 {
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    /* Ambient Solar Shadow System */
+    .solar-elevation-1 {
+      box-shadow: 0 4px 20px -2px rgba(217, 119, 6, 0.08), 0 2px 6px -1px rgba(68, 64, 60, 0.04);
+    }
+    .solar-elevation-2 {
+      box-shadow: 0 12px 32px -8px rgba(217, 119, 6, 0.12), 0 4px 12px -2px rgba(68, 64, 60, 0.05);
+    }
+    .solar-glow {
+      box-shadow: 0 8px 24px -4px rgba(217, 119, 6, 0.35);
+    }
+    /* Drawer y Modales */
+    .drawer-open {
+      transform: translateX(0) !important;
+    }
+    .overlay-visible {
+      opacity: 1 !important;
+      pointer-events: auto !important;
+    }
+    .modal-open {
+      opacity: 1 !important;
+      pointer-events: auto !important;
+    }
+  </style>
+</head>
+<body class="bg-background text-on-surface antialiased font-sans selection:bg-primary-fixed selection:text-on-primary-fixed min-h-screen flex flex-col">
+
+  <!-- ========================================== -->
+  <!-- VISTA 1: TIENDA RESPONSIVA (MÓVIL & PC)    -->
+  <!-- ========================================== -->
+  <div id="storeViewWrapper" class="flex-grow flex flex-col pb-20 md:pb-0">
+
+    <!-- 1. Top promotional announcement banner -->
+    <aside class="w-full bg-primary text-on-primary py-2 px-4 text-center text-xs md:text-sm flex items-center justify-center gap-2 shadow-sm relative z-50">
+      <span class="inline-flex items-center gap-1.5 font-semibold">
+        <span>☀️</span> Envíos gratis sobre $30.000 y regalito sorpresa en cada pedido 🎁
+      </span>
+      <span class="hidden md:inline-block w-1.5 h-1.5 rounded-full bg-primary-fixed-dim"></span>
+      <span class="hidden md:inline-block text-primary-fixed text-xs font-semibold uppercase tracking-wider">
+        Taller Abierto en Santiago &amp; Envíos Rápidos a todo Chile
+      </span>
+    </aside>
+
+    <!-- 2. Header (Top Navigation Bar) -->
+    <header class="w-full sticky top-0 z-40 bg-surface/95 backdrop-blur-md border-b border-outline-variant/30 shadow-sm">
+      <div class="w-full px-4 md:px-8 max-w-7xl mx-auto flex items-center justify-between py-3.5 gap-4 md:gap-8">
+        
+        <!-- Brand Logo -->
+        <a class="flex items-center gap-2.5 flex-shrink-0 group cursor-pointer" onclick="app.filterByCategory('Todos')">
+          <div class="w-10 h-10 rounded-full bg-primary-fixed flex items-center justify-center text-primary transition-transform duration-300 group-hover:rotate-45 shadow-sm">
+            <span class="material-symbols-outlined text-primary text-2xl" style="font-variation-settings: 'FILL' 1;">light_mode</span>
+          </div>
+          <div class="flex flex-col">
+            <span class="text-xl md:text-2xl font-bold text-primary tracking-tight leading-tight">María del Pilar</span>
+            <span class="text-[10px] md:text-[11px] text-outline tracking-widest uppercase -mt-0.5 font-medium">Joyería &amp; Bisutería Fina</span>
+          </div>
+        </a>
+
+        <!-- Desktop Live Search Bar (Visible on lg+) -->
+        <div class="hidden lg:flex items-center flex-1 max-w-md mx-4">
+          <div class="relative w-full">
+            <span class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-outline">
+              <span class="material-symbols-outlined text-[20px]">search</span>
+            </span>
+            <input id="searchInputDesktop" class="w-full pl-10 pr-20 py-2 bg-surface-container-low rounded-full border border-outline-variant/40 text-on-surface placeholder:text-outline/70 focus:outline-none focus:border-secondary focus:ring-2 focus:ring-secondary/20 transition-all text-xs" placeholder="Buscar turquesa, plata 925, aros o dijes..." type="search" oninput="app.handleSearch(this.value)"/>
+            <button onclick="app.clearSearch()" class="absolute inset-y-1 right-1.5 px-3 bg-surface-container-highest hover:bg-surface-container text-on-surface-variant rounded-full text-[11px] font-semibold transition-colors">
+              Limpiar
+            </button>
+          </div>
+        </div>
+
+        <!-- Trailing Action Cluster -->
+        <div class="flex items-center gap-1.5 sm:gap-3">
+          <!-- Mobile search icon trigger -->
+          <button aria-label="Buscar joyas" onclick="app.toggleSearch()" class="lg:hidden w-9 h-9 flex items-center justify-center rounded-full text-on-surface-variant hover:text-primary active:scale-95 transition-transform">
+            <span class="material-symbols-outlined text-[22px]">search</span>
+          </button>
+
+          <!-- Wishlist Link -->
+          <button aria-label="Favoritos" onclick="app.showFavoritesOnly()" class="relative p-2 text-on-surface-variant hover:text-primary transition-colors duration-200 rounded-full hover:bg-surface-container-low flex items-center justify-center" title="Ver mis favoritas">
+            <span class="material-symbols-outlined text-2xl">favorite</span>
+            <span id="wishlistCountBadge" class="absolute top-1 right-1 bg-tertiary text-on-tertiary text-[10px] font-bold w-4 h-4 rounded-full flex items-center justify-center shadow-xs">2</span>
+          </button>
+
+          <!-- Shopping Bag Trigger -->
+          <button onclick="app.openCartDrawer()" class="flex items-center gap-2 bg-primary text-on-primary px-3.5 md:px-4 py-2 rounded-full text-xs md:text-sm font-bold shadow-sm hover:solar-glow transition-all duration-200 active:scale-95">
+            <span class="material-symbols-outlined text-xl">shopping_bag</span>
+            <span id="desktopCartBadgeText" class="hidden sm:inline">Bolsa (0)</span>
+            <span id="cartBadgeCount" class="sm:hidden font-bold">0</span>
+          </button>
+
+          <!-- Admin Panel Gear Trigger -->
+          <button aria-label="Administración Boutique" onclick="app.toggleAdminView()" title="Panel de Gestión" class="w-9 h-9 flex items-center justify-center rounded-full text-on-surface-variant hover:text-primary active:scale-95 transition-transform">
+            <span class="material-symbols-outlined text-[20px]">settings</span>
+          </button>
+
+          <!-- Founder Portrait Avatar (Desktop only) -->
+          <div class="hidden xl:flex items-center pl-2 border-l border-outline-variant/40" title="Atelier María del Pilar">
+            <img alt="María del Pilar en su atelier" class="w-9 h-9 rounded-full object-cover border-2 border-primary-fixed" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCBczcHkoSOf9XSRsYsxCS7EFkzNJ38Ea_vWwdcdym7WWCvcbT2cx-vxO5-X5I_xVQw-xcMeTEC5mvJLVdRgqjBPZDO62Gg31JFDwN9DyiSg0OeqEDfzgSPaHdNJg29NDd4hDbBUZHUuKBrDnfopVcCYpdb9UmeUtZqzdO2rJ9cS9G2CaC1HGNfFznmaKLUWSpaWbodjk-Ns-Yrb-sKoHXxQncWvJ2KRnic1DkIrbiKj2NdxSpKOdZBZqHOv5lEq5S7KqMY6W6GwkfM"/>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile Quick Search Input (Toggled) -->
+      <div id="quickSearchBar" class="hidden lg:hidden px-4 pb-3 w-full transition-all">
+        <div class="relative flex items-center">
+          <input type="text" id="searchInputMobile" placeholder="Buscar aros, collares, plata 925, turquesa..." oninput="app.handleSearch(this.value)" class="w-full bg-surface-container-low border border-outline-variant/40 rounded-full py-2 pl-9 pr-8 text-xs text-on-surface placeholder:text-on-surface-variant/70 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary"/>
+          <span class="material-symbols-outlined absolute left-2.5 text-on-surface-variant text-[18px]">search</span>
+          <button onclick="app.clearSearch()" class="absolute right-2.5 text-on-surface-variant hover:text-on-surface">
+            <span class="material-symbols-outlined text-[16px]">close</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Desktop Category Navigation Sub-bar -->
+      <nav class="hidden md:flex border-t border-outline-variant/30 bg-surface-container-lowest/80 backdrop-blur-sm">
+        <div class="w-full max-w-7xl mx-auto px-8 flex items-center justify-center gap-8 py-2.5 text-xs md:text-sm font-semibold">
+          <button onclick="app.filterByCategory('Todos')" class="text-primary border-b-2 border-primary pb-0.5 flex items-center gap-1.5 transition-colors">
+            <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">sunny</span>
+            <span>Colección Solar</span>
+          </button>
+          <button onclick="app.filterByCategory('Plata 925')" class="text-on-surface-variant hover:text-primary transition-colors">
+            Plata 925 Pura
+          </button>
+          <button onclick="app.filterByCategory('Collares')" class="text-on-surface-variant hover:text-primary transition-colors">
+            Turquesa &amp; Chokers
+          </button>
+          <button onclick="app.filterByCategory('Anillos & Dijes')" class="text-on-surface-variant hover:text-primary transition-colors">
+            Anillos &amp; Dijes
+          </button>
+          <button onclick="app.filterByCategory('Bisutería Colorida')" class="text-on-surface-variant hover:text-primary transition-colors flex items-center gap-1">
+            <span>Novedades</span>
+            <span class="bg-tertiary-fixed text-on-tertiary-fixed text-[10px] px-1.5 py-0.5 rounded-full font-bold">Pop</span>
+          </button>
+          <button onclick="app.filterByCategory('Aros & Candongas')" class="text-on-surface-variant hover:text-primary transition-colors">
+            Aros &amp; Candongas
+          </button>
+          <button onclick="app.filterByCategory('Pulseras')" class="text-on-surface-variant hover:text-primary transition-colors">
+            Pulseras &amp; Tobilleras
+          </button>
+          <a href="#atelier-tour" class="text-secondary hover:text-primary transition-colors flex items-center gap-1">
+            <span class="material-symbols-outlined text-sm">storefront</span>
+            <span>El Atelier</span>
+          </a>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Main Content Canvas -->
+    <main class="flex-grow space-y-8 md:space-y-12 pt-4 md:pt-8">
+
+      <!-- 3. Hero Editorial Section (Responsive: 12 Cols on Desktop, Stack on Mobile) -->
+      <section class="w-full px-4 md:px-8 max-w-7xl mx-auto">
+        <div class="bg-surface-container-low rounded-2xl md:rounded-3xl p-5 md:p-10 border border-outline-variant/30 relative overflow-hidden solar-elevation-1">
+          <!-- Ambient Solar Glow Accents -->
+          <div class="absolute -top-24 -right-24 w-96 h-96 rounded-full bg-secondary-fixed/40 blur-3xl pointer-events-none"></div>
+          <div class="absolute -bottom-24 -left-24 w-80 h-80 rounded-full bg-primary-fixed/50 blur-3xl pointer-events-none"></div>
+          
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 md:gap-10 items-center relative z-10">
+            <!-- Content Left (7 cols desktop) -->
+            <div class="lg:col-span-7 space-y-4 md:space-y-6 text-left">
+              <!-- Badges & Tags -->
+              <div class="flex flex-wrap items-center gap-2">
+                <span class="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-primary-fixed text-on-primary-fixed text-xs font-bold shadow-xs">
+                  <span class="material-symbols-outlined text-[15px]" style="font-variation-settings: 'FILL' 1;">wb_sunny</span>
+                  <span>Edición Sol de Verano 2025</span>
+                </span>
+                <span class="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-surface-container-highest text-on-surface-variant text-xs font-semibold">
+                  <span class="material-symbols-outlined text-[15px] text-secondary">verified</span>
+                  <span>Plata 925 Certificada</span>
+                </span>
+                <span class="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-surface-container-highest text-on-surface-variant text-xs font-semibold">
+                  <span class="material-symbols-outlined text-[15px] text-tertiary">favorite</span>
+                  <span>Hecho a Mano con Amor</span>
+                </span>
+              </div>
+
+              <!-- Headline -->
+              <h1 class="text-3xl sm:text-4xl lg:text-5xl text-on-surface tracking-tight font-extrabold leading-tight">
+                Joyas con chispa <br/>
+                <span class="text-primary italic font-serif font-normal">y radiante alegría.</span>
+              </h1>
+
+              <!-- Subtitle -->
+              <p class="text-sm md:text-lg text-on-surface-variant max-w-xl leading-relaxed">
+                Plata esterlina 925 y bisutería artesanal con el encanto y la luz dorada del Mediterráneo. Cada diseño nace en nuestro taller para acompañar tus días más luminosos.
+              </p>
+
+              <!-- Actions -->
+              <div class="pt-2 flex flex-wrap items-center gap-3 md:gap-4">
+                <a href="#catalogo" class="inline-flex items-center gap-2 bg-primary hover:bg-primary-container text-on-primary px-7 py-3 rounded-full text-sm font-bold transition-all duration-200 solar-glow active:scale-95 shadow-md">
+                  <span>Ver Colección Verano ☀️</span>
+                  <span class="material-symbols-outlined text-lg">arrow_forward</span>
+                </a>
+                <button onclick="app.openWhatsAppConcierge()" class="inline-flex items-center gap-2 border border-secondary text-secondary hover:bg-secondary/5 px-6 py-3 rounded-full text-sm font-bold transition-colors active:scale-95">
+                  <span class="material-symbols-outlined text-base">chat</span>
+                  <span>Asesoría WhatsApp</span>
+                </button>
+              </div>
+
+              <!-- Social Proof -->
+              <div class="pt-2 flex items-center gap-3 text-on-surface-variant text-xs md:text-sm">
+                <div class="flex -space-x-2">
+                  <div class="w-8 h-8 rounded-full border-2 border-surface bg-secondary-fixed flex items-center justify-center font-bold text-xs text-on-secondary-fixed">MP</div>
+                  <div class="w-8 h-8 rounded-full border-2 border-surface bg-tertiary-fixed flex items-center justify-center font-bold text-xs text-on-tertiary-fixed">SL</div>
+                  <div class="w-8 h-8 rounded-full border-2 border-surface bg-primary-fixed flex items-center justify-center font-bold text-xs text-on-primary-fixed">CR</div>
+                </div>
+                <p>
+                  <strong class="text-on-surface font-bold">Más de 2.400 mujeres</strong> llevando el sol chileno y mediterráneo este 2025.
+                </p>
+              </div>
+            </div>
+
+            <!-- Editorial Imagery Right (5 cols desktop) -->
+            <div class="lg:col-span-5 relative mt-4 lg:mt-0">
+              <div class="relative mx-auto max-w-md lg:max-w-none">
+                <!-- Hero Main Photo Card -->
+                <div class="rounded-2xl overflow-hidden solar-elevation-2 border-4 border-surface-container-lowest bg-surface-container-highest aspect-[4/5]">
+                  <img alt="Colección Verano Sol María del Pilar" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAbh2bmwewl3HY1npJgDwPlDLMfkAQmJo8quTTltCEQatW1VIm96vS9RD-_oFvjyoGHuoeNCGSq8FupPK6QkkKb1mxZaQRkUUYddj0ZMtoNo_C7_0Lqh5sAFQOLSNFFH5T7Jo9VNsH1YkR60aMnf0nT1hSZjOHvsxWVMiII7Hi-SmWCU-yYkdDxjw0hpkszPx5vo0L5VQ2KgVlQnesgp67qfaM-D4CNpKavD0KYkZJ0Eq5wOchwbHPGoA7ofBaQOdpJksfiv7PDPDfH"/>
+                </div>
+                <!-- Floating Detail Badge -->
+                <div class="absolute -bottom-3 -left-3 md:-bottom-4 md:-left-6 bg-surface-container-lowest p-3 md:p-4 rounded-xl solar-elevation-2 border border-outline-variant/30 flex items-center gap-3 backdrop-blur-sm">
+                  <div class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container">
+                    <span class="material-symbols-outlined text-xl md:text-2xl">diamond</span>
+                  </div>
+                  <div>
+                    <span class="block text-[10px] md:text-xs text-outline font-medium">Garantía de Orfebrería</span>
+                    <span class="text-xs md:text-sm font-bold text-on-surface">Plata Ley 925 Pura</span>
+                  </div>
+                </div>
+                <!-- Top Right Micro Floating Pill -->
+                <div class="absolute -top-3 -right-3 bg-tertiary text-on-tertiary px-3 py-1 rounded-full text-xs font-bold flex items-center gap-1 shadow-md">
+                  <span class="material-symbols-outlined text-xs">local_fire_department</span>
+                  <span>Edición Limitada</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4. Featured Banner / Ribbon of the Week -->
+      <section class="w-full px-4 md:px-8 max-w-7xl mx-auto">
+        <div class="bg-gradient-to-r from-primary-fixed via-tertiary-fixed to-secondary-fixed/50 rounded-2xl p-4 md:px-8 flex flex-col md:flex-row items-center justify-between gap-4 border border-outline-variant/20 shadow-sm cursor-pointer hover:opacity-95 transition-opacity" onclick="app.openZoomModal('p1', 0)">
+          <div class="flex items-center gap-3.5 text-left w-full md:w-auto">
+            <div class="w-11 h-11 md:w-12 md:h-12 rounded-full bg-primary text-on-primary flex items-center justify-center flex-shrink-0 shadow-xs">
+              <span class="material-symbols-outlined text-xl md:text-2xl">auto_awesome</span>
+            </div>
+            <div>
+              <span class="text-tertiary text-[11px] uppercase tracking-wider block font-bold">Destacado Semanal</span>
+              <h2 class="text-base md:text-lg font-bold text-on-surface leading-snug">
+                Joya de la Semana: El toque fresco para tus días de sol
+              </h2>
+            </div>
+          </div>
+          <button class="w-full md:w-auto inline-flex items-center justify-center gap-1.5 bg-surface-container-lowest text-primary hover:text-on-primary hover:bg-primary text-xs md:text-sm font-bold px-6 py-2.5 rounded-full transition-all duration-200 flex-shrink-0 shadow-sm">
+            <span>Descubrir Ahora</span>
+            <span class="material-symbols-outlined text-base">arrow_outward</span>
+          </button>
+        </div>
+      </section>
+
+      <!-- 5. Filter Bar & Collection Selector -->
+      <section class="w-full px-4 md:px-8 max-w-7xl mx-auto pt-2" id="catalogo">
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-outline-variant/30 pb-4">
+          <div>
+            <span class="text-secondary text-xs font-bold uppercase tracking-wider block">Selección Atelier</span>
+            <h2 class="text-2xl md:text-3xl font-bold text-on-surface" id="catalogSectionTitle">Favoritos Radiantes</h2>
+          </div>
+          
+          <!-- Category Pills (Scrollable on mobile, unified on desktop) -->
+          <nav id="categoryNavPills" aria-label="Categorías de Joyería" class="flex items-center gap-2 overflow-x-auto hide-scrollbar pb-1 md:pb-0">
+            <!-- Renderizado dinámico desde app.js -->
+          </nav>
+        </div>
+      </section>
+
+      <!-- 6. 'Favoritos Radiantes' Responsive Product Grid (4 Columns Desktop, 2 Columns Mobile) -->
+      <section class="w-full px-4 md:px-8 max-w-7xl mx-auto">
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-6" id="productsGrid">
+          <!-- Renderizado dinámicamente desde app.js con el diseño exacto de Stitch -->
+        </div>
+      </section>
+
+      <!-- 7. Two-Column Highlight Feature Cards -->
+      <section class="w-full px-4 md:px-8 max-w-7xl mx-auto" id="atelier-tour">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <!-- Left Highlight Card: Packaging & Sweet Details -->
+          <div class="bg-surface-container-low rounded-2xl md:rounded-3xl p-6 md:p-8 border border-outline-variant/30 relative overflow-hidden solar-elevation-1 flex flex-col justify-between">
+            <div class="space-y-3 relative z-10">
+              <div class="w-12 h-12 rounded-full bg-tertiary-fixed text-on-tertiary-fixed flex items-center justify-center">
+                <span class="material-symbols-outlined text-2xl">redeem</span>
+              </div>
+              <span class="text-tertiary text-xs font-bold uppercase tracking-wider block">Experiencia Unboxing</span>
+              <h3 class="text-xl md:text-2xl font-bold text-on-surface">Detalles pensados para sonreír</h3>
+              <p class="text-xs md:text-sm text-on-surface-variant leading-relaxed">
+                Cada pedido se envía envuelto a mano con amor: caja rígida color durazno mediterráneo, paño pulidor especial para plata 925, tarjeta con dedicatoria personalizada y un dulce típico de bienvenida.
+              </p>
+              <ul class="pt-2 space-y-1.5 text-xs md:text-sm text-on-surface">
+                <li class="flex items-center gap-2">
+                  <span class="material-symbols-outlined text-primary text-base">check_circle</span>
+                  <span>Caja rígida eco-amigable reutilizable</span>
+                </li>
+                <li class="flex items-center gap-2">
+                  <span class="material-symbols-outlined text-primary text-base">check_circle</span>
+                  <span>Paño abrillantador de joyas incluido</span>
+                </li>
+              </ul>
+            </div>
+            <div class="pt-6 relative z-10">
+              <button onclick="app.openCartDrawer()" class="inline-flex items-center gap-1.5 text-primary text-xs md:text-sm font-bold hover:underline">
+                <span>Descubre el empaque estival</span>
+                <span class="material-symbols-outlined text-base">arrow_forward</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Right Highlight Card: Personal Concierge WhatsApp -->
+          <div class="bg-surface-container-low rounded-2xl md:rounded-3xl p-6 md:p-8 border border-outline-variant/30 relative overflow-hidden solar-elevation-1 flex flex-col justify-between">
+            <div class="space-y-3 relative z-10">
+              <div class="w-12 h-12 rounded-full bg-secondary-fixed text-on-secondary-fixed flex items-center justify-center">
+                <span class="material-symbols-outlined text-2xl">support_agent</span>
+              </div>
+              <span class="text-secondary text-xs font-bold uppercase tracking-wider block">Atención Personalizada</span>
+              <h3 class="text-xl md:text-2xl font-bold text-on-surface">Concierge Privado &amp; WhatsApp</h3>
+              <p class="text-xs md:text-sm text-on-surface-variant leading-relaxed">
+                ¿Dudas con la talla de un anillo o buscando el regalo perfecto para alguien especial? Nuestras expertas del atelier te atienden directamente con fotos, videos reales y asesoría de estilo estival sin apuros.
+              </p>
+              <div class="pt-2 flex items-center gap-3">
+                <div class="flex items-center gap-1.5 px-3 py-1 bg-surface-container-lowest rounded-full border border-outline-variant/30 text-xs font-medium text-on-surface">
+                  <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+                  <span>Orfebres en línea ahora</span>
+                </div>
+                <span class="text-xs text-outline">Respuesta media: 5 minutos</span>
+              </div>
+            </div>
+            <div class="pt-6 relative z-10">
+              <button onclick="app.openWhatsAppConcierge()" class="inline-flex items-center gap-2 bg-secondary text-on-secondary px-6 py-3 rounded-full text-xs md:text-sm font-bold hover:bg-secondary/90 transition-all duration-200 shadow-sm active:scale-95">
+                <span class="material-symbols-outlined text-lg">chat</span>
+                <span>Hablar con una Asesora</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 8. Atelier Guarantee Badges Strip -->
+      <section class="w-full bg-surface-container-low border-y border-outline-variant/20 py-8">
+        <div class="w-full max-w-7xl mx-auto px-4 md:px-8 grid grid-cols-2 md:grid-cols-4 gap-6">
+          <div class="flex items-center gap-3">
+            <span class="material-symbols-outlined text-primary text-3xl">verified_user</span>
+            <div>
+              <span class="text-xs md:text-sm font-bold text-on-surface block">Garantía Ley 925</span>
+              <span class="text-xs text-outline">Certificado en cada joya</span>
+            </div>
+          </div>
+          <div class="flex items-center gap-3">
+            <span class="material-symbols-outlined text-primary text-3xl">local_shipping</span>
+            <div>
+              <span class="text-xs md:text-sm font-bold text-on-surface block">Envíos Rápidos</span>
+              <span class="text-xs text-outline">A todo Chile por BlueExpress</span>
+            </div>
+          </div>
+          <div class="flex items-center gap-3">
+            <span class="material-symbols-outlined text-primary text-3xl">published_with_changes</span>
+            <div>
+              <span class="text-xs md:text-sm font-bold text-on-surface block">Cambios Fáciles</span>
+              <span class="text-xs text-outline">30 días sin complicaciones</span>
+            </div>
+          </div>
+          <div class="flex items-center gap-3">
+            <span class="material-symbols-outlined text-primary text-3xl">spa</span>
+            <div>
+              <span class="text-xs md:text-sm font-bold text-on-surface block">Hipoalergénico</span>
+              <span class="text-xs text-outline">Libre de níquel y plomo</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 9. Newsletter Atelier Sign-up Section -->
+      <section class="w-full px-4 md:px-8 max-w-7xl mx-auto py-8">
+        <div class="bg-surface-container-lowest rounded-2xl md:rounded-3xl p-6 md:p-12 border border-outline-variant/30 text-center max-w-3xl mx-auto space-y-4 solar-elevation-1">
+          <div class="w-12 h-12 rounded-full bg-primary-fixed text-primary mx-auto flex items-center justify-center">
+            <span class="material-symbols-outlined text-2xl">mail</span>
+          </div>
+          <h3 class="text-2xl md:text-3xl font-bold text-on-surface">
+            Únete a la Familia Solar del Atelier
+          </h3>
+          <p class="text-xs md:text-sm text-on-surface-variant max-w-lg mx-auto">
+            Recibe un <strong>10% de descuento en tu primer pedido</strong>, lanzamientos de colecciones cápsula y consejos de cuidado para tus piezas.
+          </p>
+          <form class="flex flex-col sm:flex-row items-center justify-center gap-2 max-w-md mx-auto" onsubmit="event.preventDefault(); alert('¡Gracias por unirte! Te hemos enviado tu cupón del 10% a tu correo.');">
+            <input class="w-full px-5 py-3 rounded-full bg-surface-container-low border border-outline-variant/40 text-on-surface placeholder:text-outline text-xs focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary" placeholder="Ingresa tu correo electrónico..." required type="email"/>
+            <button class="w-full sm:w-auto px-7 py-3 bg-primary hover:bg-primary-container text-on-primary rounded-full text-xs md:text-sm font-bold whitespace-nowrap transition-colors solar-glow" type="submit">
+              Suscribirme ☀️
+            </button>
+          </form>
+          <span class="block text-outline text-[11px]">
+            No enviamos spam. Puedes cancelar tu suscripción con un solo clic.
+          </span>
+        </div>
+      </section>
+    </main>
+
+    <!-- 10. Comprehensive Boutique Footer (Desktop & Tablet) -->
+    <footer class="w-full bg-surface-container-low border-t border-outline-variant/30 text-on-surface mt-12">
+      <div class="w-full px-4 md:px-8 py-12 max-w-7xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-8 pb-8 border-b border-outline-variant/20">
+          <!-- Atelier Brand Intro (4 cols) -->
+          <div class="md:col-span-4 space-y-3">
+            <div class="flex items-center gap-2">
+              <span class="material-symbols-outlined text-primary text-2xl" style="font-variation-settings: 'FILL' 1;">light_mode</span>
+              <span class="text-xl font-bold text-primary tracking-tight">María del Pilar</span>
+            </div>
+            <p class="text-xs md:text-sm text-on-surface-variant pr-4 leading-relaxed">
+              Atelier de joyería artesanal y bisutería fina de inspiración mediterránea. Diseños en plata 925 de ley, perlas de río y piedras semipreciosas elaborados con devoción y luz solar en Chile.
+            </p>
+            <div class="flex items-center gap-3 pt-2 text-primary">
+              <a aria-label="Instagram" class="w-9 h-9 rounded-full bg-surface-container hover:bg-primary hover:text-on-primary flex items-center justify-center transition-colors" href="https://instagram.com" target="_blank">
+                <span class="material-symbols-outlined text-lg">photo_camera</span>
+              </a>
+              <a aria-label="WhatsApp" onclick="app.openWhatsAppConcierge()" class="w-9 h-9 rounded-full bg-surface-container hover:bg-primary hover:text-on-primary flex items-center justify-center transition-colors cursor-pointer">
+                <span class="material-symbols-outlined text-lg">forum</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Links Columns (8 cols) -->
+          <div class="md:col-span-8 grid grid-cols-2 sm:grid-cols-3 gap-6 text-xs md:text-sm">
+            <div class="space-y-2">
+              <h4 class="font-bold text-primary">El Taller</h4>
+              <ul class="space-y-2 text-on-surface-variant">
+                <li><a class="hover:text-primary transition-colors cursor-pointer" onclick="app.filterByCategory('Todos')">Sobre el Atelier</a></li>
+                <li><a class="hover:text-primary transition-colors cursor-pointer" onclick="app.filterByCategory('Plata 925')">Garantía Artesanal</a></li>
+                <li><a class="hover:text-primary transition-colors cursor-pointer" onclick="app.openWhatsAppConcierge()">Concierge Privado</a></li>
+              </ul>
+            </div>
+            <div class="space-y-2">
+              <h4 class="font-bold text-primary">Atención &amp; Guías</h4>
+              <ul class="space-y-2 text-on-surface-variant">
+                <li><a class="hover:text-primary transition-colors cursor-pointer">Guía de Cuidados de Joyas</a></li>
+                <li><a class="hover:text-primary transition-colors cursor-pointer">Tiempos de Envío y Retiro</a></li>
+                <li><a class="hover:text-primary transition-colors cursor-pointer" onclick="app.toggleAdminView()">Gestión Tienda (Admin)</a></li>
+              </ul>
+            </div>
+            <div class="space-y-2 col-span-2 sm:col-span-1">
+              <h4 class="font-bold text-primary">Visítanos</h4>
+              <p class="text-on-surface-variant text-xs leading-relaxed">
+                Atelier Providencia, Santiago de Chile.<br/>
+                Atención presencial previa cita.
+              </p>
+              <span class="inline-block mt-2 text-xs text-secondary font-bold">
+                contacto@mariadelpilarjoyas.cl
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Copyright Subfooter Row -->
+        <div class="pt-6 flex flex-col md:flex-row items-center justify-between gap-3 text-outline text-xs">
+          <p>© 2025 Boutique Verano Sol María del Pilar. Joyería Artesanal del Mediterráneo.</p>
+          <div class="flex items-center gap-3">
+            <span>Diseño con chispa solar</span>
+            <span>•</span>
+            <span>Plata Esterlina 925</span>
+            <span>•</span>
+            <span>Hecho a mano en Chile</span>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- 11. Mobile Bottom Navigation Bar (Visible only on mobile devices) -->
+    <nav aria-label="Navegación principal" class="flex md:hidden fixed bottom-0 left-0 right-0 w-full z-40 justify-around items-center px-3 py-2 pb-safe bg-surface/95 backdrop-blur-md shadow-[0_-4px_20px_rgba(217,119,6,0.08)] border-t border-outline-variant/20 rounded-t-xl">
+      <!-- Tab 1: Inicio -->
+      <button onclick="app.filterByCategory('Todos')" class="flex flex-col items-center justify-center text-primary px-3 py-1.5 active:scale-95">
+        <span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">sunny</span>
+        <span class="text-[10px] font-bold mt-0.5">Inicio</span>
+      </button>
+      <!-- Tab 2: Catálogo -->
+      <a href="#catalogo" class="flex flex-col items-center justify-center text-on-surface-variant px-3 py-1.5 hover:text-primary active:scale-95">
+        <span class="material-symbols-outlined text-[20px]">auto_awesome</span>
+        <span class="text-[10px] font-medium mt-0.5">Catálogo</span>
+      </a>
+      <!-- Tab 3: Favoritos -->
+      <button onclick="app.showFavoritesOnly()" class="flex flex-col items-center justify-center text-on-surface-variant px-3 py-1.5 hover:text-primary active:scale-95">
+        <span class="material-symbols-outlined text-[20px]">favorite</span>
+        <span class="text-[10px] font-medium mt-0.5">Favoritos</span>
+      </button>
+      <!-- Tab 4: Mi Bolsa (with badge) -->
+      <button onclick="app.openCartDrawer()" class="relative flex flex-col items-center justify-center text-on-surface-variant px-3 py-1.5 hover:text-primary active:scale-95">
+        <div class="relative inline-flex items-center justify-center">
+          <span class="material-symbols-outlined text-[20px]">shopping_bag</span>
+          <span id="bottomCartBadge" class="absolute -top-1 -right-2 w-3.5 h-3.5 bg-tertiary text-on-tertiary text-[9px] font-bold rounded-full flex items-center justify-center">
+            0
+          </span>
+        </div>
+        <span class="text-[10px] font-medium mt-0.5">Mi Bolsa</span>
+      </button>
+    </nav>
+  </div>
+
+  <!-- ========================================== -->
+  <!-- VISTA 2: PANEL DE ADMINISTRACIÓN ATELIER   -->
+  <!-- ========================================== -->
+  <div id="adminViewWrapper" class="hidden min-h-screen bg-surface-container-low p-4 md:p-8 max-w-5xl mx-auto w-full">
+    <!-- Admin Topbar -->
+    <div class="flex items-center justify-between pb-4 border-b border-outline-variant/30 mb-6">
+      <div>
+        <span class="text-xs text-secondary font-bold uppercase tracking-wider">Gestión Interna</span>
+        <h2 class="text-xl md:text-2xl font-bold text-on-surface flex items-center gap-2">
+          <span class="material-symbols-outlined text-primary text-[24px]">storefront</span>
+          Panel de Administración Boutique
+        </h2>
+      </div>
+      <button onclick="app.toggleAdminView()" class="px-4 py-2 rounded-full bg-primary text-on-primary text-xs md:text-sm font-bold flex items-center gap-1.5 shadow-sm active:scale-95">
+        <span class="material-symbols-outlined text-[18px]">arrow_back</span>
+        <span>Volver a la Tienda</span>
+      </button>
+    </div>
+
+    <!-- Admin Tabs Navigation -->
+    <div class="flex gap-2 overflow-x-auto hide-scrollbar mb-6">
+      <button onclick="app.switchAdminTab('products')" id="adminTabBtn-products" class="shrink-0 px-4 py-2 rounded-full bg-primary text-on-primary text-xs md:text-sm font-bold shadow-xs">
+        📦 Productos
+      </button>
+      <button onclick="app.switchAdminTab('menus')" id="adminTabBtn-menus" class="shrink-0 px-4 py-2 rounded-full bg-surface-container text-on-surface-variant text-xs md:text-sm font-bold">
+        🗂️ Menús y Categorías
+      </button>
+      <button onclick="app.switchAdminTab('orders')" id="adminTabBtn-orders" class="shrink-0 px-4 py-2 rounded-full bg-surface-container text-on-surface-variant text-xs md:text-sm font-bold">
+        🧾 Pedidos (<span id="adminOrdersCountBadge">0</span>)
+      </button>
+      <button onclick="app.switchAdminTab('settings')" id="adminTabBtn-settings" class="shrink-0 px-4 py-2 rounded-full bg-surface-container text-on-surface-variant text-xs md:text-sm font-bold">
+        ⚙️ Ajustes
+      </button>
+    </div>
+
+    <!-- Tab Content: Productos -->
+    <div id="adminTab-products" class="space-y-4">
+      <div class="flex items-center justify-between">
+        <span class="text-xs md:text-sm font-semibold text-on-surface-variant" id="adminProductsTotalLabel">8 Piezas registradas</span>
+        <button onclick="app.openProductModal()" class="px-4 py-2 rounded-full bg-primary text-on-primary text-xs md:text-sm font-bold flex items-center gap-1.5 shadow-xs">
+          <span class="material-symbols-outlined text-[18px]">add</span>
+          <span>Nueva Joya</span>
+        </button>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-3" id="adminProductsListCards">
+        <!-- Renderizado dinámicamente -->
+      </div>
+    </div>
+
+    <!-- Tab Content: Menús -->
+    <div id="adminTab-menus" class="hidden space-y-6">
+      <div class="bg-surface p-5 rounded-2xl border border-outline-variant/30 space-y-4">
+        <h4 class="text-sm font-bold text-on-surface">Agregar Nuevo Menú o Subcategoría</h4>
+        <form onsubmit="app.handleAddMenu(event)" class="space-y-3 text-xs md:text-sm">
+          <div>
+            <label class="block text-on-surface-variant font-medium mb-1">Nombre del Menú</label>
+            <input type="text" id="newMenuName" required placeholder="Ej: Anillos &amp; Circones" class="w-full bg-surface-container-low p-2.5 rounded-xl border border-outline-variant/40 text-xs md:text-sm">
+          </div>
+          <div>
+            <label class="block text-on-surface-variant font-medium mb-1">Ícono / Emoji</label>
+            <input type="text" id="newMenuIcon" placeholder="Ej: 💍 o ☀️" class="w-full bg-surface-container-low p-2.5 rounded-xl border border-outline-variant/40 text-xs md:text-sm">
+          </div>
+          <div>
+            <label class="block text-on-surface-variant font-medium mb-1">Menú Padre (Opcional)</label>
+            <select id="parentMenuSelect" class="w-full bg-surface-container-low p-2.5 rounded-xl border border-outline-variant/40 text-xs md:text-sm">
+              <option value="">-- Es un menú principal (Píldora superior) --</option>
+            </select>
+          </div>
+          <button type="submit" class="w-full py-2.5 bg-primary text-on-primary rounded-full font-bold text-xs md:text-sm shadow-xs">
+            + Guardar Menú
+          </button>
+        </form>
+      </div>
+
+      <div class="bg-surface p-5 rounded-2xl border border-outline-variant/30 space-y-3">
+        <h4 class="text-sm font-bold text-on-surface">Estructura Actual de Menús</h4>
+        <div id="adminMenusTree" class="space-y-2 text-xs md:text-sm"></div>
+      </div>
+    </div>
+
+    <!-- Tab Content: Pedidos -->
+    <div id="adminTab-orders" class="hidden space-y-4">
+      <div class="text-xs md:text-sm text-on-surface-variant font-medium">Registro de pedidos recibidos por WhatsApp y Bolsa</div>
+      <div id="adminOrdersContainer" class="space-y-3">
+        <!-- Renderizado dinámicamente -->
+      </div>
+    </div>
+
+    <!-- Tab Content: Ajustes -->
+    <div id="adminTab-settings" class="hidden space-y-4">
+      <div class="bg-surface p-5 rounded-2xl border border-outline-variant/30 space-y-4 text-xs md:text-sm">
+        <h4 class="text-base font-bold text-on-surface">Ajustes Generales</h4>
+        <form onsubmit="app.handleSaveSettings(event)" class="space-y-3">
+          <div>
+            <label class="block text-on-surface-variant font-medium mb-1">WhatsApp Oficial de la Boutique</label>
+            <input type="text" id="settingWhatsapp" value="+56912345678" class="w-full bg-surface-container-low p-2.5 rounded-xl border border-outline-variant/40 text-xs md:text-sm">
+          </div>
+          <div>
+            <label class="block text-on-surface-variant font-medium mb-1">Monto Mínimo para Envío Gratis ($ CLP)</label>
+            <input type="number" id="settingFreeShipping" value="30000" class="w-full bg-surface-container-low p-2.5 rounded-xl border border-outline-variant/40 text-xs md:text-sm">
+          </div>
+          <button type="submit" class="w-full py-2.5 bg-primary text-on-primary rounded-full font-bold text-xs md:text-sm shadow-xs">
+            Guardar Ajustes
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================== -->
+  <!-- MODAL ZOOM LIGHTBOX (LUPA HD EN FOTOGRAFÍA)-->
+  <!-- ========================================== -->
+  <div id="zoomLightboxModal" class="fixed inset-0 bg-black/70 backdrop-blur-md z-50 opacity-0 pointer-events-none transition-opacity duration-300 flex items-center justify-center p-4">
+    <div class="max-w-2xl w-full bg-surface rounded-3xl overflow-hidden shadow-2xl relative max-h-[92vh] flex flex-col md:flex-row border border-outline-variant/30">
+      <!-- Close button -->
+      <button onclick="app.closeZoomModal()" class="absolute top-3 right-3 z-30 w-9 h-9 rounded-full bg-surface/90 text-on-surface backdrop-blur-sm flex items-center justify-center shadow-md hover:bg-surface active:scale-90">
+        <span class="material-symbols-outlined text-[20px]">close</span>
+      </button>
+
+      <!-- Zoom viewer Left -->
+      <div class="w-full md:w-1/2 flex flex-col bg-surface-container-low">
+        <div class="relative w-full aspect-[4/5] bg-surface-container overflow-hidden cursor-crosshair" id="zoomImageContainer" onmousemove="app.handleZoomLens(event)" onmouseleave="app.resetZoomLens()">
+          <img id="lightboxMainImg" src="" alt="Joya en detalle" class="w-full h-full object-cover transition-transform duration-100 ease-out origin-center">
+          <div class="absolute bottom-2.5 right-2.5 px-2.5 py-1 rounded-full bg-surface/85 backdrop-blur-sm text-[10px] font-semibold text-on-surface-variant flex items-center gap-1 shadow-xs pointer-events-none">
+            <span class="material-symbols-outlined text-[13px]">zoom_in</span>
+            Mueve para zoom
+          </div>
+        </div>
+        <!-- Thumbnails Strip -->
+        <div class="flex items-center gap-2 p-3 overflow-x-auto hide-scrollbar border-t border-outline-variant/20" id="lightboxThumbnailsStrip">
+          <!-- Renderizado dinámicamente -->
+        </div>
+      </div>
+
+      <!-- Details Right -->
+      <div class="p-6 space-y-4 flex-1 overflow-y-auto hide-scrollbar flex flex-col justify-between">
+        <div class="space-y-2.5">
+          <div class="flex items-center justify-between">
+            <span id="lightboxBadge" class="px-2.5 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed text-[11px] font-bold"></span>
+            <span id="lightboxMaterial" class="text-xs text-on-surface-variant font-medium"></span>
+          </div>
+          <h3 id="lightboxTitle" class="text-xl md:text-2xl font-bold text-on-surface leading-snug"></h3>
+          <div class="flex items-baseline gap-2">
+            <span id="lightboxPrice" class="text-2xl font-bold text-primary"></span>
+          </div>
+          <p id="lightboxDescription" class="text-xs md:text-sm leading-relaxed text-on-surface-variant"></p>
+
+          <div class="p-3 rounded-xl bg-surface-container-low border border-outline-variant/30 text-xs text-on-surface-variant flex items-center gap-2.5">
+            <span class="material-symbols-outlined text-secondary text-xl">verified</span>
+            <span>Garantía de Ley: Plata 925 auténtica. Incluye paño abrillantador y caja estuche de regalo.</span>
+          </div>
+        </div>
+
+        <!-- Actions -->
+        <div class="pt-4 space-y-2.5">
+          <button onclick="app.addCurrentToCart()" class="w-full py-3.5 rounded-full bg-primary text-on-primary font-bold text-sm shadow-md hover:bg-primary-container active:scale-98 transition-all flex items-center justify-center gap-2">
+            <span class="material-symbols-outlined text-lg">shopping_bag</span>
+            <span>Añadir a la Bolsa</span>
+          </button>
+          <button onclick="app.askByWhatsAppCurrent()" class="w-full py-2.5 rounded-full bg-secondary text-on-secondary font-bold text-xs md:text-sm shadow-sm hover:opacity-90 active:scale-98 transition-all flex items-center justify-center gap-2">
+            <span class="material-symbols-outlined text-lg">chat</span>
+            <span>Consultar por WhatsApp</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================== -->
+  <!-- CART DRAWER LATERAL (BOLSA DE COMPRAS)     -->
+  <!-- ========================================== -->
+  <div id="cartDrawerOverlay" class="fixed inset-0 bg-black/40 backdrop-blur-xs z-50 opacity-0 pointer-events-none transition-opacity duration-300" onclick="app.closeCartDrawer()"></div>
+  <aside id="cartDrawer" class="fixed top-0 right-0 h-full w-full max-w-md bg-surface z-50 shadow-2xl transform translate-x-full transition-transform duration-300 flex flex-col border-l border-outline-variant/30">
+    <!-- Header -->
+    <div class="flex items-center justify-between p-4 border-b border-surface-container bg-surface/90 backdrop-blur-sm">
+      <div>
+        <h3 class="text-base font-bold text-on-surface">Tu Bolsa de Compras</h3>
+        <span class="text-xs text-on-surface-variant font-medium">(<span id="drawerItemsCount">0</span> piezas)</span>
+      </div>
+      <button onclick="app.closeCartDrawer()" class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant hover:text-on-surface active:scale-90">
+        <span class="material-symbols-outlined text-[18px]">close</span>
+      </button>
+    </div>
+
+    <!-- Free shipping progress bar -->
+    <div class="p-3 bg-primary-fixed/40 border-b border-primary-fixed-dim/30">
+      <div class="text-[11px] font-semibold text-primary mb-1 flex items-center gap-1">
+        <span class="material-symbols-outlined text-[15px]">local_shipping</span>
+        <span id="shippingProgressText">Agrega piezas para obtener Envío Gratis</span>
+      </div>
+      <div class="w-full bg-surface rounded-full h-1.5 overflow-hidden">
+        <div id="shippingProgressBar" class="bg-primary h-full transition-all duration-300" style="width: 0%"></div>
+      </div>
+    </div>
+
+    <!-- Items container -->
+    <div id="cartItemsContainer" class="flex-1 overflow-y-auto p-4 space-y-3 hide-scrollbar">
+      <!-- Items renderizados dinámicamente -->
+    </div>
+
+    <!-- Gift wrap box -->
+    <div class="p-3 mx-4 rounded-xl bg-surface-container-low border border-outline-variant/30 text-xs mb-2">
+      <label class="flex items-center gap-2 cursor-pointer font-medium text-on-surface">
+        <input type="checkbox" id="giftWrapCheck" onchange="app.toggleGiftWrap(this.checked)" class="rounded text-primary focus:ring-primary">
+        <span>🎁 ¿Es para regalo? (Dedicatoria y packaging gratis)</span>
+      </label>
+      <div id="giftMessageWrapper" class="mt-2 hidden">
+        <input type="text" id="giftDedicationText" placeholder="Escribe tu dedicatoria especial aquí..." class="w-full text-xs p-2 rounded-lg bg-surface border border-outline-variant/40 focus:outline-none focus:border-primary">
+      </div>
+    </div>
+
+    <!-- Footer with Subtotal and Checkout button -->
+    <div class="p-4 border-t border-surface-container bg-surface space-y-2">
+      <div class="flex justify-between text-xs text-on-surface-variant">
+        <span>Subtotal</span>
+        <strong id="cartSubtotalText" class="text-on-surface">$0</strong>
+      </div>
+      <div class="flex justify-between text-xs text-on-surface-variant">
+        <span>Envío a Domicilio</span>
+        <span id="cartShippingText" class="text-secondary font-semibold">Calculado</span>
+      </div>
+      <div class="flex justify-between text-sm font-bold text-on-surface pt-1 border-t border-surface-container">
+        <span>Total Estimado</span>
+        <strong id="cartTotalText" class="text-primary text-base">$0</strong>
+      </div>
+      <button onclick="app.processCheckout()" class="w-full py-3 rounded-full bg-primary text-on-primary font-bold text-xs shadow-md hover:bg-primary-container active:scale-98 transition-all flex items-center justify-center gap-2">
+        <span>Proceder al Pedido Seguro</span>
+        <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+      </button>
+      <p class="text-[10px] text-center text-on-surface-variant">
+        Pagas seguro con Transferencia, Débito o Crédito
+      </p>
+    </div>
+  </aside>
+
+  <!-- ========================================== -->
+  <!-- MODAL DE CHECKOUT FINAL (DATOS DEL CLIENTE)-->
+  <!-- ========================================== -->
+  <div id="checkoutModal" class="fixed inset-0 bg-black/60 backdrop-blur-xs z-50 opacity-0 pointer-events-none transition-opacity duration-300 flex items-center justify-center p-4">
+    <div class="max-w-md w-full bg-surface rounded-3xl overflow-hidden shadow-2xl p-6 border border-outline-variant/30 space-y-4 max-h-[92vh] overflow-y-auto hide-scrollbar">
+      <div class="flex items-center justify-between pb-2 border-b border-surface-container">
+        <h3 class="text-base font-bold text-on-surface">Finalizar Pedido Atelier</h3>
+        <button onclick="app.closeCheckoutModal()" class="w-7 h-7 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant">
+          <span class="material-symbols-outlined text-[16px]">close</span>
+        </button>
+      </div>
+
+      <form onsubmit="app.handleFinalOrder(event)" class="space-y-3 text-xs md:text-sm">
+        <div>
+          <label class="block font-medium text-on-surface-variant mb-1">Nombre Completo</label>
+          <input type="text" id="orderCustomerName" required placeholder="Ej: Marcela González" class="w-full p-2.5 rounded-xl bg-surface-container-low border border-outline-variant/40 text-xs md:text-sm">
+        </div>
+        <div>
+          <label class="block font-medium text-on-surface-variant mb-1">WhatsApp / Teléfono Móvil</label>
+          <input type="tel" id="orderCustomerPhone" required placeholder="+569 9876 5432" class="w-full p-2.5 rounded-xl bg-surface-container-low border border-outline-variant/40 text-xs md:text-sm">
+        </div>
+        <div>
+          <label class="block font-medium text-on-surface-variant mb-1">Dirección de Entrega y Comuna</label>
+          <input type="text" id="orderCustomerAddress" required placeholder="Calle, número, depto, comuna y ciudad" class="w-full p-2.5 rounded-xl bg-surface-container-low border border-outline-variant/40 text-xs md:text-sm">
+        </div>
+        <div>
+          <label class="block font-medium text-on-surface-variant mb-1">Medio de Pago Preferido</label>
+          <select id="orderPaymentMethod" class="w-full p-2.5 rounded-xl bg-surface-container-low border border-outline-variant/40 text-xs md:text-sm">
+            <option value="Transferencia Bancaria">Transferencia Electrónica Bancaria (Datos al coordinar)</option>
+            <option value="Webpay Plus (Tarjetas)">Webpay Plus / Débito / Crédito</option>
+            <option value="MercadoPago">MercadoPago</option>
+          </select>
+        </div>
+
+        <div id="orderRecapBox" class="p-3 rounded-xl bg-surface-container-low border border-outline-variant/30 text-xs">
+          <!-- Resumen de piezas -->
+        </div>
+
+        <div class="flex gap-2 pt-2">
+          <button type="button" onclick="app.closeCheckoutModal()" class="w-1/3 py-2.5 rounded-full bg-surface-container text-on-surface-variant font-bold text-xs">
+            Volver
+          </button>
+          <button type="submit" class="w-2/3 py-2.5 rounded-full bg-primary text-on-primary font-bold text-xs md:text-sm shadow-md flex items-center justify-center gap-1.5">
+            <span>Confirmar por WhatsApp</span>
+            <span class="material-symbols-outlined text-[16px]">send</span>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- ========================================== -->
+  <!-- MODAL NUEVO / EDITAR PRODUCTO (ADMIN)      -->
+  <!-- ========================================== -->
+  <div id="productModal" class="fixed inset-0 bg-black/60 backdrop-blur-xs z-50 opacity-0 pointer-events-none transition-opacity duration-300 flex items-center justify-center p-4">
+    <div class="max-w-md w-full bg-surface rounded-3xl overflow-hidden shadow-2xl p-6 border border-outline-variant/30 space-y-3.5 max-h-[92vh] overflow-y-auto hide-scrollbar">
+      <div class="flex items-center justify-between pb-2 border-b border-surface-container">
+        <h3 id="productModalTitle" class="text-base font-bold text-on-surface">Agregar Nueva Joya</h3>
+        <button onclick="app.closeProductModal()" class="w-7 h-7 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant">
+          <span class="material-symbols-outlined text-[16px]">close</span>
+        </button>
+      </div>
+
+      <form id="productForm" onsubmit="app.handleSaveProduct(event)" class="space-y-3 text-xs md:text-sm">
+        <input type="hidden" id="editProductId" value="">
+        <div>
+          <label class="block font-medium text-on-surface-variant mb-1">Nombre de la Joya</label>
+          <input type="text" id="prodName" required placeholder="Ej: Collar Choker Turquesa &amp; Sol" class="w-full p-2.5 rounded-xl bg-surface-container-low border border-outline-variant/40 text-xs md:text-sm">
+        </div>
+        <div class="grid grid-cols-2 gap-2">
+          <div>
+            <label class="block font-medium text-on-surface-variant mb-1">Categoría</label>
+            <select id="prodCategory" required class="w-full p-2.5 rounded-xl bg-surface-container-low border border-outline-variant/40 text-xs md:text-sm">
+              <option value="Plata 925">Plata 925</option>
+              <option value="Bisutería Colorida">Bisutería Colorida</option>
+              <option value="Colección Sol Verano">Colección Sol Verano</option>
+            </select>
+          </div>
+          <div>
+            <label class="block font-medium text-on-surface-variant mb-1">Subcategoría</label>
+            <input type="text" id="prodSubcategory" placeholder="Ej: Collares &amp; Chokers" class="w-full p-2.5 rounded-xl bg-surface-container-low border border-outline-variant/40 text-xs md:text-sm">
+          </div>
+        </div>
+        <div>
+          <label class="block font-medium text-on-surface-variant mb-1">Material y Acabado</label>
+          <input type="text" id="prodMaterial" required placeholder="Ej: Plata 925 y turquesa natural" class="w-full p-2.5 rounded-xl bg-surface-container-low border border-outline-variant/40 text-xs md:text-sm">
+        </div>
+        <div class="grid grid-cols-2 gap-2">
+          <div>
+            <label class="block font-medium text-on-surface-variant mb-1">Precio Normal ($ CLP)</label>
+            <input type="number" id="prodPrice" required placeholder="24990" class="w-full p-2.5 rounded-xl bg-surface-container-low border border-outline-variant/40 text-xs md:text-sm">
+          </div>
+          <div>
+            <label class="block font-medium text-on-surface-variant mb-1">Etiqueta Badge</label>
+            <input type="text" id="prodBadge" placeholder="Ej: Bestseller ☀️ o Nuevo" class="w-full p-2.5 rounded-xl bg-surface-container-low border border-outline-variant/40 text-xs md:text-sm">
+          </div>
+        </div>
+        <div>
+          <label class="block font-medium text-on-surface-variant mb-1">URL Fotografía Principal (WebP / HD)</label>
+          <input type="url" id="prodImg1" required placeholder="https://..." class="w-full p-2.5 rounded-xl bg-surface-container-low border border-outline-variant/40 text-xs md:text-sm">
+        </div>
+        <div>
+          <label class="block font-medium text-on-surface-variant mb-1">Descripción</label>
+          <textarea id="prodDescription" rows="2" placeholder="Detalles de la joya..." class="w-full p-2.5 rounded-xl bg-surface-container-low border border-outline-variant/40 text-xs md:text-sm"></textarea>
+        </div>
+        <div class="flex gap-2 pt-2">
+          <button type="button" onclick="app.closeProductModal()" class="w-1/3 py-2.5 rounded-full bg-surface-container text-on-surface-variant font-bold text-xs">
+            Cancelar
+          </button>
+          <button type="submit" class="w-2/3 py-2.5 rounded-full bg-primary text-on-primary font-bold text-xs md:text-sm shadow-md">
+            Guardar Joya
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
